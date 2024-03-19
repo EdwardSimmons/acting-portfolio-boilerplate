@@ -13,14 +13,12 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
-    "dotenv": "^16.4.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "^6.22.3",
-    "sort-by": "^1.2.0",
-    "ts-node": "^10.9.2"
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "latest",

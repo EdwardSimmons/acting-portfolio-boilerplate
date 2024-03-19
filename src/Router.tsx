@@ -6,7 +6,7 @@ import Contact from "./Contact"
 import Projects from "./Projects"
 import App from "./App"
 import theme from "./theme"
-import { Button, ListItemButton, ListItemText } from "@mui/material"
+import { Button } from "@mui/material"
 
 export interface RouteDefinition {
   label: string
@@ -15,36 +15,38 @@ export interface RouteDefinition {
   element?: JSX.Element
 }
 
+export const BASE_URL = "/acting-portfolio-boilerplate/"
+
 export const routes: RouteDefinition[] = [
   {
     label: "Home",
     aria: "Navigate to home",
-    to: "/",
+    to: BASE_URL,
     element: <Home />,
   },
   {
     label: "Bio",
     aria: "Navigate to home",
-    to: "bio",
+    to: BASE_URL + "bio",
     element: <Bio />,
   },
   {
     label: "Projects",
     aria: "Navigate to projects",
-    to: "projects",
+    to: BASE_URL + "projects",
     element: <Projects />,
   },
   {
     label: "Contact",
     aria: "Navigate to contact",
-    to: "contact",
+    to: BASE_URL + "contact",
     element: <Contact />,
   },
 ]
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: BASE_URL,
     element: <App />,
     errorElement: <NotFound />,
     children: routes.map(route => {
