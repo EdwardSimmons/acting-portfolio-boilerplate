@@ -1,31 +1,31 @@
-import StickyFooter from "./StickyFooter"
-import { useState } from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Divider from "@mui/material/Divider"
-import Drawer from "@mui/material/Drawer"
-import IconButton from "@mui/material/IconButton"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemText from "@mui/material/ListItemText"
-import MenuIcon from "@mui/icons-material/Menu"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
-import { Outlet } from "react-router-dom"
-import { routes, RouterLink, ListRouterLink } from "./Router"
-import { CssBaseline } from "@mui/material"
-import theme from "./theme"
+import StickyFooter from "./StickyFooter";
+import { useState } from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { Outlet } from "react-router-dom";
+import { routes, RouterLink, ListRouterLink } from "./Router";
+import { Container, CssBaseline, Stack } from "@mui/material";
+import theme from "./theme";
 
-const drawerWidth = 240
+const drawerWidth = 240;
 
 export default function App() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(prevState => !prevState)
-  }
+    setMobileOpen((prevState) => !prevState);
+  };
 
   const drawer = (
     <Box
@@ -39,7 +39,7 @@ export default function App() {
       </Typography>
       <Divider />
       <List sx={{ backgroundColor: theme.palette.secondary.main }}>
-        {routes.map(route => (
+        {routes.map((route) => (
           <ListItem
             key={route.label}
             disablePadding
@@ -50,10 +50,10 @@ export default function App() {
         ))}
       </List>
     </Box>
-  )
+  );
 
   const container =
-    window !== undefined ? () => window.document.body : undefined
+    window !== undefined ? () => window.document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -77,7 +77,7 @@ export default function App() {
             MUI
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {routes.map(route => (
+            {routes.map((route) => (
               <RouterLink to={route.to} label={route.label} key={route.label} />
             ))}
           </Box>
@@ -103,11 +103,17 @@ export default function App() {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main">
-        <Toolbar />
-        <Outlet />
+      <Stack sx={{ width: "100vw" }}>
+        <Container
+          disableGutters
+          maxWidth="sm"
+          component="main"
+          sx={{ mt: 10, width: "100vw" }}
+        >
+          <Outlet />
+        </Container>
         <StickyFooter />
-      </Box>
+      </Stack>
     </Box>
-  )
+  );
 }
