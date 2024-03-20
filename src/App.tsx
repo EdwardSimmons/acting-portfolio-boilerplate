@@ -1,18 +1,18 @@
-import StickyFooter from "./StickyFooter"
-import { useState } from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Divider from "@mui/material/Divider"
-import Drawer from "@mui/material/Drawer"
-import IconButton from "@mui/material/IconButton"
-import List from "@mui/material/List"
-import MenuIcon from "@mui/icons-material/Menu"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import { Outlet } from "react-router-dom"
-import { routes, RouterLink, ListRouterLink } from "./Router"
-import { CssBaseline } from "@mui/material"
-import theme from "./theme"
+import StickyFooter from "./StickyFooter";
+import { useState } from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { Outlet } from "react-router-dom";
+import { routes, RouterLink, ListRouterLink } from "./Router";
+import { Container, CssBaseline, Stack } from "@mui/material";
+import theme from "./theme";
 
 const drawerWidth = 240;
 
@@ -35,7 +35,7 @@ export default function App() {
       </Typography>
       <Divider />
       <List sx={{ backgroundColor: theme.palette.secondary.main }}>
-        {routes.map(route => (
+        {routes.map((route) => (
           <ListRouterLink to={route.to} label={route.label} key={route.label} />
         ))}
       </List>
