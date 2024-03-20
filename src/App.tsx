@@ -78,7 +78,7 @@ export default function App() {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {routes.map(route => (
-              <RouterLink to={route.to} label={route.label} />
+              <RouterLink to={route.to} label={route.label} key={route.label} />
             ))}
           </Box>
         </Toolbar>
