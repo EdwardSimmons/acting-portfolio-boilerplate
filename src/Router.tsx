@@ -1,4 +1,4 @@
-import { Link, createBrowserRouter } from "react-router-dom"
+import { Link, createBrowserRouter, Navigate } from "react-router-dom"
 import NotFound from "./NotFound"
 import Home from "./Home"
 import Bio from "./Bio"
@@ -13,11 +13,19 @@ export interface RouteDefinition {
   aria: string
   to: string
   element: JSX.Element
+  index?: boolean
 }
 
 export const BASE_URL = "/acting-portfolio-boilerplate/"
 
 export const routes: RouteDefinition[] = [
+  {
+    index: true,
+    element: <Navigate to="/home" replace />,
+    label: "",
+    to: "",
+    aria: "",
+  },
   {
     label: "Home",
     aria: "Navigate to home",
