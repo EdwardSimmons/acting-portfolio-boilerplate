@@ -14,14 +14,14 @@ import { routes, RouterLink, ListRouterLink } from "./Router"
 import { CssBaseline } from "@mui/material"
 import theme from "./theme"
 
-const drawerWidth = 240
+const drawerWidth = 240;
 
 export default function App() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(prevState => !prevState)
-  }
+    setMobileOpen((prevState) => !prevState);
+  };
 
   const drawer = (
     <Box
@@ -40,10 +40,10 @@ export default function App() {
         ))}
       </List>
     </Box>
-  )
+  );
 
   const container =
-    window !== undefined ? () => window.document.body : undefined
+    window !== undefined ? () => window.document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -67,7 +67,7 @@ export default function App() {
             MUI
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {routes.map(route => (
+            {routes.map((route) => (
               <RouterLink to={route.to} label={route.label} key={route.label} />
             ))}
           </Box>
@@ -93,11 +93,17 @@ export default function App() {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main">
-        <Toolbar />
-        <Outlet />
+      <Stack sx={{ width: "100vw" }}>
+        <Container
+          disableGutters
+          maxWidth="sm"
+          component="main"
+          sx={{ mt: 10, width: "100vw" }}
+        >
+          <Outlet />
+        </Container>
         <StickyFooter />
-      </Box>
+      </Stack>
     </Box>
-  )
+  );
 }
