@@ -6,26 +6,18 @@ import Contact from "./Contact"
 import Projects from "./Projects"
 import App from "./App"
 import theme from "./theme"
-import { Button } from "@mui/material"
+import { Button, ListItem } from "@mui/material"
 
 export interface RouteDefinition {
   label: string
   aria: string
   to: string
   element: JSX.Element
-  index?: boolean
 }
 
 export const BASE_URL = "/acting-portfolio-boilerplate/"
 
 export const routes: RouteDefinition[] = [
-  {
-    index: true,
-    element: <Navigate to="/home" replace />,
-    label: "",
-    to: "",
-    aria: "",
-  },
   {
     label: "Home",
     aria: "Navigate to home",
@@ -58,12 +50,18 @@ export const router = createBrowserRouter(
       path: "/",
       element: <App />,
       errorElement: <NotFound />,
-      children: routes.map(route => {
-        return {
-          path: route.to,
-          element: route.element,
-        }
-      }),
+      children: [
+        {
+          index: true,
+          element: <Navigate to="/home" replace />,
+        },
+        ...routes.map(route => {
+          return {
+            path: route.to,
+            element: route.element,
+          }
+        }),
+      ],
     },
   ],
   {
@@ -74,6 +72,7 @@ export const router = createBrowserRouter(
 export type RouterLinkProps = {
   to: string
   label: string
+  color?: string
 }
 
 export function RouterLink(props: RouterLinkProps) {
@@ -81,7 +80,7 @@ export function RouterLink(props: RouterLinkProps) {
     <Link to={props.to}>
       <Button
         sx={{
-          color: theme.palette.secondary.main,
+          color: props.color || theme.palette.secondary.main,
         }}
       >
         {props.label}
@@ -92,15 +91,21 @@ export function RouterLink(props: RouterLinkProps) {
 
 export function ListRouterLink(props: RouterLinkProps) {
   return (
-    <Link to={props.to}>
-      <Button
-        sx={{
-          color: theme.palette.primary.main,
-          my: 1,
-        }}
+    <ListItem disablePadding sx={{ justifyContent: "center" }}>
+      <Link
+        to={props.to}
+        style={{ width: "100%", textDecoration: "none", padding: "0 1rem" }}
       >
-        {props.label}
-      </Button>
-    </Link>
+        <Button
+          fullWidth
+          sx={{
+            color: theme.palette.primary.main,
+            my: 1,
+          }}
+        >
+          {props.label}
+        </Button>
+      </Link>
+    </ListItem>
   )
 }
