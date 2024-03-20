@@ -6,13 +6,9 @@ import Divider from "@mui/material/Divider"
 import Drawer from "@mui/material/Drawer"
 import IconButton from "@mui/material/IconButton"
 import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemText from "@mui/material/ListItemText"
 import MenuIcon from "@mui/icons-material/Menu"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
 import { Outlet } from "react-router-dom"
 import { routes, RouterLink, ListRouterLink } from "./Router"
 import { CssBaseline } from "@mui/material"
@@ -40,13 +36,7 @@ export default function App() {
       <Divider />
       <List sx={{ backgroundColor: theme.palette.secondary.main }}>
         {routes.map(route => (
-          <ListItem
-            key={route.label}
-            disablePadding
-            sx={{ justifyContent: "center" }}
-          >
-            <ListRouterLink to={route.to} label={route.label} />
-          </ListItem>
+          <ListRouterLink to={route.to} label={route.label} key={route.label} />
         ))}
       </List>
     </Box>
