@@ -4,7 +4,7 @@ import { red } from "@mui/material/colors"
 const tools = createTheme()
 const primary = tools.palette.augmentColor({ color: { main: "#000000" } })
 const secondary = tools.palette.augmentColor({ color: { main: "#ffffff" } })
-const background = tools.palette.augmentColor({ color: { main: "#f4f9f4" } })
+const containerBg = tools.palette.augmentColor({ color: { main: "#ffffff" } })
 const highlight = tools.palette.augmentColor({ color: { main: "#624cab" } })
 
 // A custom theme for this app
@@ -21,17 +21,10 @@ const theme = createTheme({
     },
   },
   components: {
-    MuiTabs: {
-      styleOverrides: {
-        root: {
-          backgroundColor: primary.main,
-        },
-      },
-    },
     MuiContainer: {
       styleOverrides: {
         root: {
-          backgroundColor: background.main,
+          backgroundColor: containerBg.main,
         },
       },
     },
