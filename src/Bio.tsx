@@ -1,8 +1,10 @@
-import Container from "@mui/material/Container"
-import ImageList from "@mui/material/ImageList"
-import ImageListItem from "@mui/material/ImageListItem"
-import ImageListItemBar from "@mui/material/ImageListItemBar"
-import Typography from "@mui/material/Typography"
+import {
+  Box,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  Typography,
+} from "@mui/material"
 
 const headshots = [
   {
@@ -57,7 +59,7 @@ const headshots = [
 
 export default function Bio() {
   return (
-    <Container>
+    <Box>
       <Typography variant="h2" sx={{ mt: 3 }}>
         Bio
       </Typography>
@@ -78,6 +80,6 @@ export default function Bio() {
           </ImageListItem>
         ))}
       </ImageList>
-    </Container>
+    </Box>
   )
 }

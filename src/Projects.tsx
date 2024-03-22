@@ -1,12 +1,11 @@
-import Container from "@mui/material/Container"
-import Typography from "@mui/material/Typography"
+import { Box, Typography } from "@mui/material"
 
 export default function Projects() {
   return (
-    <Container>
+    <Box>
       <Typography variant="h2" sx={{ mt: 3 }}>
         Projects
       </Typography>
-    </Container>
+    </Box>
   )
 }

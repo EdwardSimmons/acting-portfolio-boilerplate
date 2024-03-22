@@ -1,6 +1,4 @@
-import Button from "@mui/material/Button"
-import Container from "@mui/material/Container"
-import Stack from "@mui/material/Stack"
+import { Box, Button, Stack } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import LightIcon from "@mui/icons-material/Light"
@@ -10,7 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Contact() {
   return (
-    <Container>
+    <Box>
       <Typography variant="h2" sx={{ my: 3 }}>
         Contact
       </Typography>
@@ -41,6 +39,6 @@ export default function Contact() {
           YouTube
         </Button>
       </Stack>
-    </Container>
+    </Box>
   )
 }

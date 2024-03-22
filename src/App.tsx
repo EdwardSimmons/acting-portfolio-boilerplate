@@ -97,10 +97,9 @@ export default function App() {
       </nav>
       <Stack sx={{ width: "100vw" }}>
         <Container
-          disableGutters
           maxWidth="sm"
           component="main"
-          sx={{ mt: 10 }}
+          sx={{ mt: 10, minHeight: "100dvh" }}
         >
           <Outlet />
         </Container>
