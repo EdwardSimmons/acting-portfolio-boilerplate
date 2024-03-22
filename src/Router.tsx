@@ -1,4 +1,9 @@
-import { Link, createBrowserRouter, Navigate } from "react-router-dom"
+import {
+  Link,
+  createBrowserRouter,
+  Navigate,
+  useLocation,
+} from "react-router-dom"
 import NotFound from "./NotFound"
 import Home from "./Home"
 import Bio from "./Bio"
@@ -43,6 +48,11 @@ export const routes: RouteDefinition[] = [
     element: <Contact />,
   },
 ]
+
+export const useCurrentPath = () => {
+  const location = useLocation()
+  return location.pathname
+}
 
 export const router = createBrowserRouter(
   [
@@ -99,7 +109,7 @@ export function ListRouterLink(props: RouterLinkProps) {
         <Button
           fullWidth
           sx={{
-            color: theme.palette.primary.main,
+            color: theme.palette.secondary.main,
             my: 1,
           }}
         >
