@@ -91,6 +91,7 @@ export function RouterLink(props: RouterLinkProps) {
       <Button
         sx={{
           color: props.color || theme.palette.secondary.main,
+          ml: 2,
         }}
       >
         {props.label}
