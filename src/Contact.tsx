@@ -1,7 +1,6 @@
-import { Box, Button, Stack } from "@mui/material"
+import { Avatar, Box, Button, Stack } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import InstagramIcon from "@mui/icons-material/Instagram"
-import LightIcon from "@mui/icons-material/Light"
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail"
 import MusicNoteIcon from "@mui/icons-material/MusicNote"
 import YouTubeIcon from "@mui/icons-material/YouTube"
@@ -24,8 +23,18 @@ export default function Contact() {
         <Button target="_blank" component="a" startIcon={<InstagramIcon />}>
           Instagram
         </Button>
-        <Button target="_blank" component="a" startIcon={<LightIcon />}>
-          Spotlight
+        <Button
+          target="_blank"
+          component="a"
+          startIcon={
+            <Avatar
+              alt="Spotlight logo"
+              src="./spotlight.jpeg"
+              sx={{ width: "1.25rem", height: "1.25rem" }}
+            />
+          }
+        >
+          Spotlight Performer
         </Button>
         <Button target="_blank" component="a" startIcon={<MusicNoteIcon />}>
           Spotify
