@@ -99,7 +99,7 @@ export default function App() {
         <Container
           maxWidth="sm"
           component="main"
-          sx={{ mt: 10, minHeight: "100dvh" }}
+          sx={{ mt: 10, minHeight: "100dvh", borderRadius: "1rem" }}
         >
           <Outlet />
         </Container>
