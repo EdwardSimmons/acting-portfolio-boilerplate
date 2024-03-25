@@ -35,13 +35,13 @@ export default function StickyFooter() {
           py: 3,
           px: 2,
           mt: "auto",
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.light,
         }}
       >
         <Container
           maxWidth="sm"
           sx={{
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.primary.light,
             color: theme.palette.secondary.main,
           }}
         >
